@@ -29,16 +29,18 @@ app.post("/", function (req, res) {
   };
   var jsonData = JSON.stringify(data);
 
-  const url = "https://us8.api.mailchimp.com/3.0/lists/68c0aa09b7";
+  const url = "https://us9.api.mailchimp.com/3.0/lists/b7fc3e6132";
   const options = {
     method: "post",
-    auth: "D3N2:d886c1ea28915ae21acaf6915445a202-us8",
+    auth: "D3N2:57c43fdef1d5b6b4e1d72942f4001439-us9",
   };
 
-  const request = https.request(url, options, function (req, res) {
-    res.on("data", console.log(JSON.parse(data)));
+  const request = https.request(url, options, function (response) {
+    response.on("data", function (data) {
+      console.log(JSON.parse(data));
+    });
   });
-  request.wirte(jsonData);
+  request.write(jsonData);
   request.end();
 });
 
@@ -46,5 +48,5 @@ app.listen(3000, function () {
   console.log("Server started at port 3000");
 });
 
-//d886c1ea28915ae21acaf6915445a202-us8
-// 68c0aa09b7
+//57c43fdef1d5b6b4e1d72942f4001439-us9
+// b7fc3e6132
