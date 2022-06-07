@@ -50,6 +50,10 @@ app.post("/", function (req, res) {
   }
 });
 
+app.post("/failure", function (req, res) {
+  req.redirect("/");
+});
+
 app.listen(3000, function () {
   console.log("Server started at port 3000");
 });

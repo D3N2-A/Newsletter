@@ -110,7 +110,8 @@
         }
 
         .rip {
-            display: inline-block;
+            /* margin-top: 30px; */
+            display: inline;
         }
     </style>
 </head>
@@ -122,7 +123,7 @@
 
             <div class="container rip">
 
-                <a href="#" class="intro-banner-vdo-play-btn pinkBg" target="_blank">
+                <a href="" class="intro-banner-vdo-play-btn pinkBg">
                     <i class="glyphicon glyphicon-play whiteText" aria-hidden="true"></i>
                     <span class="ripple pinkBg"></span>
                     <span class="ripple pinkBg"></span>
@@ -136,6 +137,9 @@
 
             <h1>Oops!</h1>
             <p>Something went Wrong 😥</p>
+            <form action="/failure" method="post">
+                <button type="submit" class="btn btn-lg  bt">Try again</button>
+            </form>
         </div>
         <!-- JavaScript Bundle with Popper -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
