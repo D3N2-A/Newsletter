@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 
 const app = express();
 const https = require("https");
+const { response } = require("express");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
@@ -42,6 +43,11 @@ app.post("/", function (req, res) {
   });
   request.write(jsonData);
   request.end();
+  if (response.statusCode === 200) {
+    res.sendFile(__dirname + "/success.html");
+  } else {
+    res.sendFile(__dirname + "/failure.html");
+  }
 });
 
 app.listen(3000, function () {
