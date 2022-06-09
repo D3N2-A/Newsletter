@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 
 const https = require("https");
 const app = express();
-const { response } = require("express");
 app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get("/", function (req, res) {
